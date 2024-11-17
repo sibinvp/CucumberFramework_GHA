@@ -62,7 +62,7 @@ jobs:
         if: success() || failure()
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PAT }}
           publish_dir: ./test-output  # Path to the generated report folder
           force_orphan: true  # This will force the creation of the gh-pages branch without copying hidden files
 
