@@ -42,6 +42,13 @@ jobs:
       - name: Build with Maven
         run: mvn clean test -Dbrowser="chromeheadless"
 
+      - name: Copy files from Main
+        if: success() || failure()
+        run: |
+          # Copy the files you want (e.g., from source-folder) to an intermediate directory
+          cp -r ./test-output/* /tmp/files/  # Replace with actual folder to copy
+     
+
       # - name: Upload test results
       #   if: success() || failure()
       #   uses: actions/upload-artifact@v4
@@ -58,15 +65,32 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git  
       
-      - name: Deploy report page to Git Hub
+      - name: Create gh-pages branch if it doesn't exist
         if: success() || failure()
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./test-output  # Path to the generated report folder
-          force_orphan: true  # This will force the creation of the gh-pages branch without copying hidden files
+        run: |
+          # Fetch the latest changes from the gh-pages branch or create a new branch if it doesn't exist
+          git fetch origin gh-pages || git checkout --orphan gh-pages
+          git reset --hard origin/gh-pages  # Ensure you're working on the latest gh-pages
 
+      # Step 8: Deploy the Spark report
+      - name: Deploy Spark report to GitHub Pages
+        if: success() || failure()
+        run: |
+          # Clean up the gh-pages branch by removing any old files
+          rm -rf *  # This deletes all files in the current directory (it will be replaced by your report)
+          
+          # Copy the generated Spark report to the root of the gh-pages branch
+          cp -r /tmp/files/* .  # Correct path to the report files
 
+          # Make sure the files are copied correctly
+          ls -al
+
+          # Add, commit, and push the changes to the gh-pages branch
+          git add .
+          git commit -m "Deploy Spark report to GitHub Pages" || echo "No changes to commit"  # Prevent errors if no changes
+          git push origin gh-pages
+
+      
       - name: Update dependency graph
         if: success() || failure()
         #uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
