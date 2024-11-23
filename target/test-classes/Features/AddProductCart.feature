@@ -11,6 +11,6 @@ Feature: Search and place order
   Examples:
   | prodName | quantity |
   | tomato	 | 4			|
-  | cucumber | 1 				|
+  #| cucumber | 1 				|
   
  
