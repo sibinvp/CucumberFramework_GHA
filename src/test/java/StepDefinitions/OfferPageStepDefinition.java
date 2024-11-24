@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import org.testng.Assert;
 
@@ -12,14 +13,16 @@ import io.cucumber.java.en.Then;
 public class OfferPageStepDefinition {
 
 	TestContextSetup testContextSetup;
+	private HashMap<String, String> dataSet;
 
 	public OfferPageStepDefinition(TestContextSetup testContextSetup) {
 		this.testContextSetup = testContextSetup;
+		this.dataSet=testContextSetup.testBase.dataSet;
 	}
 
-	@Then("^User searched for (.+) shortname in offer page$")
-	public void user_searched_for_shortname_in_offer_page(String shortName) throws InterruptedException {
-
+	@Then("User searched for shortname in offer page")
+	public void user_searched_for_shortname_in_offer_page() throws InterruptedException {
+		String shortName=dataSet.get("ShortName");
 		HomePage homePage = testContextSetup.pageObjectManager.getHomePage();
 		homePage.selectTopDealsPage();
 		testContextSetup.genericUtilities.switchToChildWindow();

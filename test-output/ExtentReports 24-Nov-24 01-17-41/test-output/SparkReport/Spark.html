@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Nov 24, 2024 02:04:58 AM</span></a>
+<a href="#"><span class="badge badge-primary">Nov 24, 2024 01:17:41 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('category-view')">
@@ -72,6 +77,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -79,7 +85,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@placeOrder_csv</a>
+<a class="dropdown-item" href="#">@searchProduct_csv</a><a class="dropdown-item" href="#">@placeOrder_csv</a>
 </ul>
 </li>
 </ul>
@@ -90,9 +96,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Search and place order from CSV</p>
+            <p class="name">Add and place order from CSV</p>
             <p class="text-sm">
-              <span>2:04:59 AM</span> / <span>00:00:38:485</span>
+              <span>1:17:42 PM</span> / <span>00:01:25:860</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -100,10 +106,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Search and place order from CSV</h5>
-<span class='badge badge-success'>11.24.2024 2:04:59 AM</span>
-<span class='badge badge-danger'>11.24.2024 2:05:37 AM</span>
-<span class='badge badge-default'>00:00:38:485</span>
+<h5 class="test-status text-pass">Add and place order from CSV</h5>
+<span class='badge badge-success'>11.24.2024 1:17:42 PM</span>
+<span class='badge badge-danger'>11.24.2024 1:19:08 PM</span>
+<span class='badge badge-default'>00:01:25:860</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -138,6 +144,11 @@
       </div>
                   </div>
                   <div class="step pass-bg">
+                    <span>Then User searched for tomato and quantity in cart page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
                     <span>And user validate apply button and place the order</span>
       <div>
       </div>
@@ -147,7 +158,7 @@
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="11"><span class="badge log pass-bg mr-2">Pass</span>Place order from cart using csv</div>
+                  <div class="node" id="4"><span class="badge log pass-bg mr-2">Pass</span>Place order from cart using csv</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -162,7 +173,138 @@
       </div>
                   </div>
                   <div class="step pass-bg">
+                    <span>Then User searched for tomato and quantity in cart page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
                     <span>And user validate apply button and place the order</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Search products from CSV</p>
+            <p class="text-sm">
+              <span>1:17:42 PM</span> / <span>00:01:27:605</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Search products from CSV</h5>
+<span class='badge badge-success'>11.24.2024 1:17:42 PM</span>
+<span class='badge badge-danger'>11.24.2024 1:19:10 PM</span>
+<span class='badge badge-default'>00:01:27:605</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="6"><span class="badge log fail-bg mr-2">Fail</span>Search for products in both home and offer page using csv</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="7"><span class="badge log fail-bg mr-2">Fail</span>Search for products in both home and offer page using csv</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given User is on GreenCart home page for TC4</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user searched with shortname and extracted actual name of product</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then User searched for shortname in offer page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>And Validate product name in offer page matches with home page.</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: expected [Brocolli] but found [No data]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at StepDefinitions.OfferPageStepDefinition.validate_product_name_in_offer_page_matches_with_home_page(OfferPageStepDefinition.java:38)
+	at ✽.Validate product name in offer page matches with home page.(file:///C:/Users/sibin.valluparambath/eclipse-workspace2/CucumberFramework_GHA/src/test/java/Features/SearchProductwithCSV.feature:9)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>StepDefinitions.Hooks.addScreenShot(io.cucumber.java.Scenario)</span>
+      <div>failed Step
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./screenshots/embedded1.png' src="./screenshots/embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="8"><span class="badge log pass-bg mr-2">Pass</span>Search for products in both home and offer page using csv</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User is on GreenCart home page for TC3</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user searched with shortname and extracted actual name of product</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then User searched for shortname in offer page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Validate product name in offer page matches with home page.</span>
       <div>
       </div>
                   </div>
@@ -182,14 +324,114 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view category-view attributes-view">
+<div class="test-wrapper row view exception-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
 <ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:19:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='38'>And Validate product name in offer page matches with home page.</a>
+<div class="">
+<span class="badge badge-default">Search products from CSV.Search for products in both home and offer page using csv.And Validate product name in offer page matches with home page.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@searchProduct_csv</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@searchProduct_csv</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>13:17:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='7'>Search for products in both home and offer page using csv</a>
+<div class="">
+<span class="badge badge-default">Search products from CSV.Search for products in both home and offer page using csv</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>13:17:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='8'>Search for products in both home and offer page using csv</a>
+<div class="">
+<span class="badge badge-default">Search products from CSV.Search for products in both home and offer page using csv</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
@@ -214,21 +456,21 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>02:04:59 AM</td>
+<td>13:17:42 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='3'>Place order from cart using csv</a>
 <div class="">
-<span class="badge badge-default">Search and place order from CSV.Place order from cart using csv</span>
+<span class="badge badge-default">Add and place order from CSV.Place order from cart using csv</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>02:05:20 AM</td>
+<td>13:17:42 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='11'>Place order from cart using csv</a>
+<a href="#" class="linked" test-id='1' id='4'>Place order from cart using csv</a>
 <div class="">
-<span class="badge badge-default">Search and place order from CSV.Place order from cart using csv</span>
+<span class="badge badge-default">Add and place order from CSV.Place order from cart using csv</span>
 </div>
 </td>
 </tr>
@@ -249,13 +491,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Nov 24, 2024 02:04:58 AM</h3>
+<h3>Nov 24, 2024 01:17:41 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Nov 24, 2024 02:05:37 AM</h3>
+<h3>Nov 24, 2024 01:19:10 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -267,7 +509,7 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -283,12 +525,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
+<div><small data-tooltip='50%'>
 <b>1</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> features failed,
+<small data-tooltip='50%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -306,9 +548,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>2</b> scenarios passed</small></div>
+<div><small data-tooltip='75%'><b>3</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> scenarios failed,
+<small data-tooltip='25%'><b>1</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -326,9 +568,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>6</b> steps passed</small></div>
+<div><small data-tooltip='94%'><b>16</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
+<small data-tooltip='5%'><b>1</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -345,7 +587,7 @@
 </div></div>
 <script>
 var timeline = {
-"Search and place order from CSV":38.485
+"Add and place order from CSV":85.86,"Search products from CSV":87.605
 };
 </script>
 <div class="row">
@@ -354,6 +596,14 @@ var timeline = {
 <div class="card-header"><p>Tags</p></div>
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@searchProduct_csv</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>50%</td>
+</tr>
 <tr>
 <td>@placeOrder_csv</td>
 <td>2</td>
@@ -372,18 +622,18 @@ var timeline = {
 var statusGroup = {
 parentCount: 5,
 passParent: 1,
-failParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 2,
-failChild: 0,
+passChild: 3,
+failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 6,
-failGrandChild: 0,
+passGrandChild: 16,
+failGrandChild: 1,
 warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,

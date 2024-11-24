@@ -49,33 +49,6 @@ public class TestBase {
 		String url = pi.getProperty("url");
 		if (driver == null) {
 
-//	/**	if(driver==null) {
-//		String browserName=pi.getProperty("browser");
-//			if(browserName.equalsIgnoreCase("edge")) {
-//		System.setProperty("webdriver.msedge.driver", System.getProperty("user.dir")+"//src//test//resources//msedgedriver.exe");
-//		EdgeOptions opt = new EdgeOptions();
-//		opt.addArguments("-guest");
-//		driver=new EdgeDriver(opt);
-//		driver.manage().window().maximize();
-//			}
-//		else
-//		{
-//		System.out.println("Please select browser as edge");
-//		}
-//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-//		driver.get(url);
-//		System.out.println("browser is: "+browserName);
-//		
-//			
-//			}
-//		
-//		return driver;
-//	}
-//	**/
-
-			// below code will first check if any global system paramenter send via MVN call
-			// from command
-
 			String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
 					: pi.getProperty("browser");
 
@@ -159,7 +132,7 @@ public class TestBase {
 	}
 
 	// Method to convert Excel sheet to List<HashMap<String, String>>
-	public HashMap<String, String> convertExcelToListOfHashMaps(String filePath, String tcID) throws IOException {
+	public void convertExcelToListOfHashMaps(String filePath, String tcID) throws IOException {
 		List<HashMap<String, String>> data = new ArrayList<>();
 
 		try (FileInputStream fis = new FileInputStream((filePath)); XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
@@ -195,16 +168,13 @@ public class TestBase {
 			}
 			rowIndex = getRowIndex(filePath, tcID);
 			System.out.println("Pass TC ID is: " + tcID);
-			System.out.println(rowIndex);
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		dataSet = data.get(rowIndex - 1);
+		System.out.println(dataSet);
 
-		// dataRecord = data;
-		dataSet = data.get(rowIndex-1);
-		// return data;
-		return dataSet;
 	}
 
 	// Helper method to get cell value based on the cell type
@@ -242,7 +212,6 @@ public class TestBase {
 			while (cells.hasNext()) {
 				Cell columnname = cells.next();
 				if (columnname.getStringCellValue().equalsIgnoreCase("TestCase")) {
-					System.out.println("found test case COLUMN");
 					column = k;
 					break;
 				}

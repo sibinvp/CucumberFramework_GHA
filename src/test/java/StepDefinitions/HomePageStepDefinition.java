@@ -3,15 +3,20 @@ package StepDefinitions;
 import java.io.IOException;
 
 import org.testng.Assert;
+
+
 import PageObjects.HomePage;
 import Utilities.TestContextSetup;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Arrays;
 import java.util.HashMap;
+
 
 public class HomePageStepDefinition {
 
@@ -23,12 +28,11 @@ public class HomePageStepDefinition {
 
 		this.testContextSetup = testContextSetup;
 		this.homePage = testContextSetup.pageObjectManager.getHomePage();
-		// loadCSVData();
-
+		
 	}
 
-	public List<HashMap<String, String>> csvData;
-	public HashMap<String, String> dataSet1;
+	private HashMap<String, String> dataSet;
+	
 	/**
 	@Before	
 	public void loadCSVData() throws IOException {
@@ -37,11 +41,13 @@ public class HomePageStepDefinition {
 		// csvData = testContextSetup.testBase.convertCSVToList(filePath);
 	}
 	**/
-
+	
+    
 	@Given("^User is on GreenCart home page for (.+)$")
 	public void user_is_on_green_cart_home_page(String tcID) throws IOException {
 		String filePath = System.getProperty("user.dir") + "//src//test//java//Data//TestData.xlsx";
-		dataSet1 = testContextSetup.testBase.convertExcelToListOfHashMaps(filePath, tcID);
+		testContextSetup.testBase.convertExcelToListOfHashMaps(filePath, tcID);
+		dataSet=testContextSetup.testBase.dataSet;
 		Assert.assertEquals(homePage.getHomePageTitle(), "GreenKart - veg and fruits kart");
 	}
 
@@ -58,6 +64,22 @@ public class HomePageStepDefinition {
 		System.out.println(testContextSetup.homeProductName + " is the home page product name");
 
 	}
+	
+	
+	@When("user searched with shortname and extracted actual name of product")
+	public void user_searched_with_shortname()
+			throws InterruptedException {
+			String shortname=dataSet.get("ShortName");
+		// homePage=testContextSetup.pageObjectManager.getHomePage();
+		homePage.searchItem(shortname);
+
+		Thread.sleep(1000);
+
+		testContextSetup.homeProductName = homePage.getProductName();
+		System.out.println(testContextSetup.homeProductName + " is the home page product name");
+
+	}
+	
 
 	@When("^user searched with (.+) and click add to cart for (.+) quantity$")
 	public void user_searched_with__prodName_and_click_add_to_cart(String prodName, String quantity)
@@ -79,14 +101,8 @@ public class HomePageStepDefinition {
 	public void user_searched_with_prod_name_and_click_add_to_cart_for_required_quantity_from_data_sheet()
 			throws InterruptedException, IOException {
 
-		//HashMap<String, String> dataSet1 = csvData.get(0);
-		System.out.println(dataSet1);
-		System.out.println(dataSet1.get("prodName"));
-		System.out.println(dataSet1.get("Categary"));
-		System.out.println(dataSet1.get("quantity"));
-
-		String prodName = dataSet1.get("prodName");
-		String quantity = dataSet1.get("quantity");
+		String prodName = dataSet.get("prodName");
+		String quantity = dataSet.get("quantity");
 
 		// String quantity = row.get("quantity");
 

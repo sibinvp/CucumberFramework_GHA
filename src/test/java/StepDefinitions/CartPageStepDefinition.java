@@ -2,6 +2,8 @@ package StepDefinitions;
 
 import static org.testng.Assert.assertEquals;
 
+import java.util.HashMap;
+
 import org.testng.Assert;
 
 import PageObjects.CartPage;
@@ -13,14 +15,17 @@ public class CartPageStepDefinition {
 
 	CartPage cartPage;
 	TestContextSetup testContextSetup;
+	private HashMap<String, String> dataSet;
 	
 	public CartPageStepDefinition(TestContextSetup testContextSetup) {
 		this.testContextSetup=testContextSetup;
 		this.cartPage =testContextSetup.pageObjectManager.getCartPage();
+		this.dataSet=testContextSetup.testBase.dataSet;
 	}
 	@Then("User searched for tomato and quantity in cart page")
 	public void user_searched_for_prodname_and_quantity_in_cart_page() {
-		System.out.println(testContextSetup.testBase.dataRecord);
+		
+		System.out.println("Data passed over to second Step def is: "+dataSet.get("quantity"));
 	    testContextSetup.cartProductName=cartPage.getCartProdName();
 	    //Assert.assertEquals(testContextSetup.cartProductName[0].toUpperCase(),prodname.toUpperCase());
 	    //Assert.assertEquals(testContextSetup.cartProductName[1],quantity);
